@@ -9,7 +9,7 @@ class Counter extends Component {
                 {/* <span>{this.state.count}</span> */}
                 {/* <span>{10+1*3}</span> */}
                 <span>{this.formatCount()}</span>
-                <button>inc</button>
+                <button className='btn btn-secondary'>inc</button>
                 </div>
             );
     }
