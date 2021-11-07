@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 class Counter extends Component {
     state = {
-        count : 1,
+        count : 0,
         imageUrl : 'https://picsum.photos/200' ,
         tags : ['t1','t2','t3']
 };
