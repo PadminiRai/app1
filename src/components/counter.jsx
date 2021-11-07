@@ -9,7 +9,7 @@ class Counter extends Component {
 // constructor(){
 //     super();
 //     this.incrementCount=this.incrementCount.bind(this);
-// }
+// };
 
 style = {
  fontSize: 75,
@@ -24,7 +24,8 @@ render() {
                 {/* <span>{10+1*3}</span> */}
                 <img alt='' src={this.state.imageUrl}/>
                 <span id='s1' style={this.style} className={this.getBadgeClass()}>{this.formatCount()}</span>
-                <button onClick={this.incrementCount} className='btn btn-secondary btn-sm'>increment</button>
+                {/* onClick is an event handler */}
+                <button onClick={()=>this.incrementCount({id:1})} className='btn btn-secondary btn-sm'>increment</button>
                  <ul>
                      {this.state.tags.map(tags => <li key={tags}>{tags}</li>)}
                  </ul>
@@ -36,14 +37,14 @@ getBadgeClass() {
         let classes = 'badge m-3 badge-';
         classes += this.state.count !== 0 ? 'primary' : 'warning';
         return classes
-}
+};
 
 formatCount(){
         const {count} = this.state;
         // const x = <h1>Zero</h1>;
         return count===0?'Zero':count;
         // return count===0?x:count;
-}
+};
 
 // incrementCount(){
 // console.log('this.state.count+1',this.state.count = this.state.count+1);
@@ -51,12 +52,12 @@ formatCount(){
 
 // }
   
-incrementCount=()=>{
-    console.log('this.state.count+1', this.state.count+1);
+incrementCount=product=>{
+    console.log('this.state.count+1', product, this.state.count+1);
     this.setState({count:this.state.count+1});
     // when ever changing state vdom gets compared to the DOM and only span gets changed than 
-    // the entire page , can be seen in elements while clicking on the button
-}
+    // the entire page , can be seen in elements while clicking on the button.
+};
 
 }
 
