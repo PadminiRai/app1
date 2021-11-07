@@ -54,6 +54,8 @@ formatCount(){
 incrementCount=()=>{
     console.log('this.state.count+1', this.state.count+1);
     this.setState({count:this.state.count+1});
+    // when ever changing state vdom gets compared to the DOM and only span gets changed than 
+    // the entire page , can be seen in elements while clicking on the button
 }
 
 }
